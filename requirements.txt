@@ -1,1 +1,5 @@
-acan van las librerias para mas tarde
+streamlit
+pandas
+numpy
+matplotlib
+seaborn
