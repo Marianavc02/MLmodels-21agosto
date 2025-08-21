@@ -73,12 +73,15 @@ df = generar_datos(n_muestras, n_columnas)
 if st.checkbox("Mostrar tabla de datos"):
     st.dataframe(df)
 
-# Selección de columnas
+# Selección de columnas múltiples
 columnas = df.columns.tolist()
+cols_seleccionadas = st.multiselect("Selecciona las columnas que quieras analizar", columnas, default=columnas[:2])
+
+# Para gráficos específicos X e Y
 col_x = st.selectbox("Selecciona columna X", columnas)
 col_y = None
 if st.checkbox("¿Usar columna Y?"):
-    col_y = st.selectbox("Selecciona columna Y (opcional)", columnas)
+    col_y = st.selectbox("Selecciona columna Y", columnas)
 
 # Selección de tipo de gráfico
 tipo_grafico = st.radio(
